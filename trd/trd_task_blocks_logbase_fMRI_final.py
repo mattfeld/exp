@@ -228,7 +228,7 @@ for thisRun in runs:
     num_TRs_needed = total_run_time/2.0
     
     #------Prepare to start Routine"waiting"-------
-    scanner.text = 'When you see "Go!" on the screen \n\n Select one of the two options\n\n by pressing the 1 and 2 keys.\n\n This run needs %s TRs.\n\n Press Return to continue'%num_TRs_needed
+    scanner.text = 'When you see "Go!" on the screen \n\n Select one of the two options\n\n by pressing the B and Y keys.\n\n This run needs %s TRs.\n\n Press Return to continue'%num_TRs_needed
     t=0; waitingClock.reset() #clock 
     frameN=-1
     #update component parameters for each repeat
@@ -532,7 +532,7 @@ for thisRun in runs:
             elif key_resp.status==STARTED and t>=(jitter_delay+response_window):#only update if being drawn
                 key_resp.status = STOPPED
             if key_resp.status == STARTED:
-                theseKeys = event.getKeys(keyList=['1', '2'])
+                theseKeys = event.getKeys(keyList=['b', 'y'])
                 if "escape" in theseKeys:
                     endExpNow = True
                 if len(theseKeys)>0:#at least one key was pressed
@@ -557,19 +557,19 @@ for thisRun in runs:
             if continueRoutine:#don't flip if this routine is over or we'll get a blank screen
                 win.flip()
         
-        if key_resp.keys == '1' and choice1 == '10':
+        if key_resp.keys == 'b' and choice1 == '10':
             curr_choice = 0.10
             delay = 0.0
             chosenvalue = '10'
-        elif key_resp.keys == '2' and choice2 == '10':
+        elif key_resp.keys == 'y' and choice2 == '10':
             curr_choice = 0.10
             delay = 0.0
             chosenvalue = '10'
-        elif key_resp.keys == '1' and choice1 == '15':
+        elif key_resp.keys == 'b' and choice1 == '15':
             curr_choice = 0.15
             delay = post_delay
             chosenvalue = '15'
-        elif key_resp.keys == '2' and choice2 == '15':
+        elif key_resp.keys == 'y' and choice2 == '15':
             curr_choice = 0.15
             delay = post_delay
             chosenvalue = '15'
